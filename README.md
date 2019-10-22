@@ -8,3 +8,4 @@ The Front End was built with [NativeScript Vue](https://nativescript-vue.org/en/
 
 ## Screen Shots
 
+<img src="app/assets/images/HomePage.jpeg" width="400" height="800"/> <img src="app/assets/images/BookListPage.jpg" width="400" height="800"/>
