@@ -47,6 +47,30 @@ export default {
           author: "By Soren Keirkegaard",
           publication: 1843,
           id: 3
+        },
+        {
+          title: "Phenomenology of Perception",
+          author: "By Maurice Merleau Ponty",
+          publication: 1945,
+          id: 4
+        },
+        {
+          title: "Black Skin, White Masks",
+          author: "By Frantz Fanon",
+          publication: 1952,
+          id: 5
+        },
+        {
+          title: "Orientalism",
+          author: "By Edward Said",
+          publication: 1978,
+          id: 6
+        },
+        {
+          title: "Gender Trouble",
+          author: "By Judith Butler",
+          publication: 1990,
+          id: 6
         }
       ]
     };
@@ -68,7 +92,12 @@ export default {
       });
       this.Books = results;
     },
-    alphabetizeByAuthor() {}
+    alphabetizeByAuthor() {
+      let results = this.Books.sort((a, b) => {
+        return a.author.localeCompare(b.author);
+      });
+      this.Books = results;
+    }
   }
 };
 </script>
