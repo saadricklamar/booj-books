@@ -2,13 +2,11 @@
   <Page>
     <ActionBar title="Books" class="action-bar" />
     <StackLayout class="book-list-page">
-      <ListView for="book in Books" @itemTap="onItemTap">
+      <ListView for="book in Books" @itemTap="goToBookDetails($event)">
         <v-template>
-            <StackLayout >
-                <Label :text="book.title" />
-                <Label :text="book.author" />
-                <Label :text="book.publication" />
-            </StackLayout>
+          <StackLayout>
+            <Label :text="book.title" />
+          </StackLayout>
         </v-template>
       </ListView>
     </StackLayout>
@@ -16,6 +14,7 @@
 </template>
 
 <script>
+import BookDetailsPage from "./BookDetailsPage";
 export default {
   data() {
     return {
@@ -23,20 +22,35 @@ export default {
         {
           title: "Critique of Pure Reason",
           author: "Immanuel Kant",
-          publication: 1781
+          publication: 1781,
+          id: 0
         },
         {
           title: "Being & Time",
           author: "Martin Heidegger",
-          publication: 1927
+          publication: 1927,
+          id: 1
         },
         {
           title: "Being & Nothingness",
           author: "Martin Heidegger",
-          publication: 1943
+          publication: 1943,
+          id: 2
         }
       ]
     };
+  },
+  methods: {
+    goToBookDetails(event) {
+      let result = this.Books.filter(book => {
+        return book.id === event.index;
+      });
+      this.$navigateTo(BookDetailsPage, {
+        props: {
+          BookToDisplay: result
+        }
+      });
+    }
   }
 };
 </script>
@@ -47,7 +61,6 @@ ListView {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
- 
-
+  height: 1000;
 }
 </style>
