@@ -4,18 +4,23 @@
     <StackLayout class="home">
       <TextField class="username" hint=" UserName..." />
       <TextField class="password" hint=" Password..." />
-      <Button class="log-in" text="Log In" />
+      <Button class="log-in" text="Log In" @tap="goToBookListPage" />
       <Button class="create-account" text="Create Account" />
     </StackLayout>
   </Page>
 </template>
 
 <script >
+import BookListPage from "./BookListPage";
+
 export default {
   data() {
-    return {
-      msg: "Hello World!"
-    };
+    return {};
+  },
+  methods: {
+    goToBookListPage() {
+      this.$navigateTo(BookListPage);
+    }
   }
 };
 </script>
@@ -55,12 +60,14 @@ ActionBar {
   background: #53ba82;
   color: white;
   font-size: 20px;
+  font-weight: bold;
   height: 8%;
   width: 70%;
 }
 
 .create-account {
   color: white;
+  font-weight: bold;
   margin-top: 5%;
 }
 </style>
