@@ -1,7 +1,11 @@
 <template>
   <Page>
     <ActionBar title="Books" class="action-bar" />
-    <StackLayout class="book-list-page">
+    <StackLayout>
+      <FlexboxLayout class="sort-buttons">
+        <Button class="alpha" text="Alphabetize by Title" @tap="alphabetizeByTitle" />
+        <Button class="alpha" text="Alphabetize by Author" @tap="alphabetizeByAuthor" />
+      </FlexboxLayout>
       <ListView for="book in Books" @itemTap="goToBookDetails($event)">
         <v-template>
           <StackLayout class="book-card">
@@ -21,7 +25,7 @@ export default {
     return {
       Books: [
         {
-          title: "Critique of Pure Reason",
+          title: "The Critique of Pure Reason",
           author: "By Immanuel Kant",
           publication: 1781,
           id: 0
@@ -37,6 +41,12 @@ export default {
           author: "By Jean Paul Sartre",
           publication: 1943,
           id: 2
+        },
+        {
+          title: "Fear & Trembling",
+          author: "By Soren Keirkegaard",
+          publication: 1843,
+          id: 3
         }
       ]
     };
@@ -51,7 +61,14 @@ export default {
           BookToDisplay: result
         }
       });
-    }
+    },
+    alphabetizeByTitle() {
+      let results = this.Books.sort((a, b) => {
+        return a.title.localeCompare(b.title);
+      });
+      this.Books = results;
+    },
+    alphabetizeByAuthor() {}
   }
 };
 </script>
@@ -66,18 +83,27 @@ ListView {
 }
 
 .book-card {
- background: #FAFAF5;
- color: #53ba82;
- font-size: 24;
- font-weight: bold;
- height: 80;
- margin: 5;
- padding-left: 25%;
- padding-top: 5%;
+  background: #fafaf5;
+  color: #53ba82;
+  font-size: 24;
+  font-weight: bold;
+  height: 80;
+  margin: 5;
+  padding-left: 25%;
+  padding-top: 5%;
 }
 
 .by {
   font-size: 12;
   height: 20;
+}
+
+.alpha {
+  color: white;
+  width: 300;
+}
+
+.sort-buttons {
+  background-color: #53ba82;
 }
 </style>
