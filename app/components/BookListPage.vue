@@ -54,10 +54,19 @@ export default {
       }
     },
     alphabetizeByAuthor() {
-      let results = this.books.sort((a, b) => {
-        return a.author.localeCompare(b.author);
-      });
-      this.books = results;
+      if (this.isAlphabetized === false) {
+        let alphabetizedByAuthor = this.books.sort((a, b) => {
+          return a.author.localeCompare(b.author);
+        });
+        this.books = alphabetizedByAuthor;
+        this.isAlphabetized = true;
+      } else {
+        let randomShuffle = this.books.sort(function() {
+          return 0.5 - Math.random();
+        });
+        this.books = randomShuffle;
+        this.isAlphabetized = false;
+      }
     }
   }
 };
