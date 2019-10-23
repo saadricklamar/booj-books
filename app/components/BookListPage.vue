@@ -10,7 +10,7 @@
         <v-template>
           <StackLayout class="book-card">
             <Label :text="book.title" />
-            <Label class="by" :text="book.author" editable="false" />
+            <Label class="by" :text="'by ' + book.author " editable="false" />
           </StackLayout>
         </v-template>
       </ListView>
@@ -23,6 +23,7 @@ import BookDetailsPage from "./BookDetailsPage";
 export default {
   data() {
     return {
+      isAlphabetized: false
     };
   },
   props: ["books"],
@@ -38,10 +39,19 @@ export default {
       });
     },
     alphabetizeByTitle() {
-      let results = this.books.sort((a, b) => {
-        return a.title.localeCompare(b.title);
-      });
-      this.books = results;
+      if (this.isAlphabetized === false) {
+        let alphabetizedByTitle = this.books.sort((a, b) => {
+          return a.title.localeCompare(b.title);
+        });
+        this.books = alphabetizedByTitle;
+        this.isAlphabetized = true;
+      } else {
+        let randomShuffle = this.books.sort(function() {
+          return 0.5 - Math.random();
+        });
+        this.books = randomShuffle;
+        this.isAlphabetized = false;
+      }
     },
     alphabetizeByAuthor() {
       let results = this.books.sort((a, b) => {
