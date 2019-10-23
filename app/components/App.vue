@@ -26,7 +26,11 @@ export default {
   },
   methods: {
     goToBookListPage() {
-      this.$navigateTo(BookListPage);
+      this.$navigateTo(BookListPage, {
+        props: {
+          books: this.books
+        }
+      });
     },
     fetchBooks() {
       fetch("http://127.0.0.1:8000/api/book")
