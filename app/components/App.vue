@@ -12,14 +12,27 @@
 
 <script >
 import BookListPage from "./BookListPage";
+import * as https from "https";
 
 export default {
   data() {
-    return {};
+    return {
+      books: [],
+      error: ""
+    };
+  },
+  mounted() {
+    this.fetchBooks();
   },
   methods: {
     goToBookListPage() {
       this.$navigateTo(BookListPage);
+    },
+    fetchBooks() {
+      fetch("http://127.0.0.1:8000/api/book")
+        .then(response => response.json())
+        .then(results => (this.books = results.data))
+        .catch(error => (this.error = error));
     }
   }
 };
