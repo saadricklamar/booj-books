@@ -22,9 +22,7 @@
 import BookDetailsPage from "./BookDetailsPage";
 export default {
   data() {
-    return {
-      isAlphabetized: false
-    };
+    return {};
   },
   props: ["books"],
   methods: {
@@ -39,34 +37,16 @@ export default {
       });
     },
     alphabetizeByTitle() {
-      if (this.isAlphabetized === false) {
-        let alphabetizedByTitle = this.books.sort((a, b) => {
-          return a.title.localeCompare(b.title);
-        });
-        this.books = alphabetizedByTitle;
-        this.isAlphabetized = true;
-      } else {
-        let randomShuffle = this.books.sort(function() {
-          return 0.5 - Math.random();
-        });
-        this.books = randomShuffle;
-        this.isAlphabetized = false;
-      }
+      let alphabetizedByTitle = this.books.sort((a, b) => {
+        return a.title.localeCompare(b.title);
+      });
+      this.books = alphabetizedByTitle;
     },
     alphabetizeByAuthor() {
-      if (this.isAlphabetized === false) {
-        let alphabetizedByAuthor = this.books.sort((a, b) => {
-          return a.author.localeCompare(b.author);
-        });
-        this.books = alphabetizedByAuthor;
-        this.isAlphabetized = true;
-      } else {
-        let randomShuffle = this.books.sort(function() {
-          return 0.5 - Math.random();
-        });
-        this.books = randomShuffle;
-        this.isAlphabetized = false;
-      }
+      let alphabetizedByAuthor = this.books.sort((a, b) => {
+        return a.author.localeCompare(b.author);
+      });
+      this.books = alphabetizedByAuthor;
     }
   }
 };
