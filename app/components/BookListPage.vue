@@ -11,7 +11,7 @@
           <StackLayout class="book-card">
             <Label :text="book.title" />
             <Label class="by" :text="'by ' + book.author " editable="false" />
-            <Button class="delete" text="-" @tap="deleteBook(book.title)" />
+            <Button class="delete" text="delete" @tap="deleteBook(book.title)" />
           </StackLayout>
         </v-template>
       </ListView>
@@ -106,8 +106,9 @@ ListView {
 
 .delete {
   text-align: right;
-  padding-right: 20;
-  font-size: 30;
+  padding-top: 20;
+  padding-right: 10;
+  font-size: 10;
   color: black;
 }
 </style>
