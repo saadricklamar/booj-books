@@ -33,7 +33,20 @@ export default {
   },
   methods: {
     goToBookListPage() {
-      this.addBook();
+      if (this.title === "" || this.author === "" || this.publication === "") {
+        alert("You must enter a title, author, and publication date");
+      } else {
+        let newBook = {
+          title: this.title,
+          author: this.author,
+          publication: this.publication
+        };
+        this.books.push(newBook);
+        this.addBook(newBook);
+        this.navigate();
+      }
+    },
+    navigate() {
       this.$navigateTo(BookListPage, {
         props: {
           books: this.books
@@ -43,14 +56,14 @@ export default {
       this.author = "";
       this.publication = "";
     },
-    addBook() {
+    addBook(newBook) {
       fetch("http://127.0.0.1:8000/api/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          title: this.title,
-          author: this.author,
-          publication: this.publication
+          title: newBook.title,
+          author: newBook.author,
+          publication: newBook.publication
         })
       })
         .then(response => console.log(response.json()))
