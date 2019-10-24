@@ -2,9 +2,13 @@
   <Page>
     <ActionBar title="Booj's Book List" />
     <StackLayout class="home">
-      <TextField class="new-book-title" hint=" Enter Book Title..." />
-      <TextField class="new-book-author" hint=" Enter Book Author..." />
-      <TextField class="new-book-publication" hint=" Enter Publication Date..." />
+      <TextField class="new-book-title" hint=" Enter Book Title..." v-model="title" />
+      <TextField class="new-book-author" hint=" Enter Book Author..." v-model="author" />
+      <TextField
+        class="new-book-publication"
+        hint=" Enter Publication Date..."
+        v-model="publication"
+      />
       <Button class="log-in" text="Add Book" @tap="goToBookListPage" />
       <Button class="create-account" text="Create Account" />
     </StackLayout>
@@ -13,13 +17,15 @@
 
 <script >
 import BookListPage from "./BookListPage";
-import * as https from "https";
 
 export default {
   data() {
     return {
       books: [],
-      error: ""
+      error: "",
+      title: "",
+      author: "",
+      publication: ""
     };
   },
   mounted() {
@@ -27,11 +33,28 @@ export default {
   },
   methods: {
     goToBookListPage() {
+      this.addBook();
       this.$navigateTo(BookListPage, {
         props: {
           books: this.books
         }
       });
+      this.title = "";
+      this.author = "";
+      this.publication = "";
+    },
+    addBook() {
+      fetch("http://127.0.0.1:8000/api/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: this.title,
+          author: this.author,
+          publication: this.publication
+        })
+      })
+        .then(response => console.log(response.json()))
+        .catch(error => console.log(error));
     },
     fetchBooks() {
       fetch("http://127.0.0.1:8000/api/book")
