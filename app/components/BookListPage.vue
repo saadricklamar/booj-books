@@ -11,6 +11,7 @@
           <StackLayout class="book-card">
             <Label :text="book.title" />
             <Label class="by" :text="'by ' + book.author " editable="false" />
+            <Button class="delete" text="-" @tap="deleteBook(book.title)" />
           </StackLayout>
         </v-template>
       </ListView>
@@ -20,6 +21,8 @@
 
 <script>
 import BookDetailsPage from "./BookDetailsPage";
+import * as http from "http";
+
 export default {
   data() {
     return {};
@@ -28,7 +31,7 @@ export default {
   methods: {
     goToBookDetails(event) {
       let result = this.books.filter(book => {
-        return book.id === event.index;
+        return this.books.indexOf(book) === event.index;
       });
       this.$navigateTo(BookDetailsPage, {
         props: {
@@ -47,6 +50,21 @@ export default {
         return a.author.localeCompare(b.author);
       });
       this.books = alphabetizedByAuthor;
+    },
+    deleteBook(title) {
+      let bookToDelete = this.books.filter(book => {
+        return book.title === title;
+      });
+      let remainingBooks = this.books.filter(book => {
+        return book.title !== title;
+      });
+      this.books = remainingBooks;
+      fetch(`http://127.0.0.1:8000/api/book/${bookToDelete[0].id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(res => res.json())
+        .then(res => console.log(res));
     }
   }
 };
@@ -66,7 +84,7 @@ ListView {
   color: #53ba82;
   font-size: 24;
   font-weight: bold;
-  height: 80;
+  height: 90;
   margin: 5;
   padding-left: 25%;
   padding-top: 5%;
@@ -75,6 +93,7 @@ ListView {
 .by {
   font-size: 12;
   height: 20;
+  padding-bottom: 10;
 }
 
 .alpha {
@@ -84,5 +103,12 @@ ListView {
 
 .sort-buttons {
   background-color: #53ba82;
+}
+
+.delete {
+  text-align: right;
+  padding-right: 20;
+  font-size: 30;
+  color: black;
 }
 </style>
