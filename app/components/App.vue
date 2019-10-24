@@ -2,9 +2,10 @@
   <Page>
     <ActionBar title="Booj's Book List" />
     <StackLayout class="home">
-      <TextField class="username" hint=" UserName..." />
-      <TextField class="password" hint=" Password..." />
-      <Button class="log-in" text="Log In" @tap="goToBookListPage" />
+      <TextField class="new-book-title" hint=" Enter Book Title..." />
+      <TextField class="new-book-author" hint=" Enter Book Author..." />
+      <TextField class="new-book-publication" hint=" Enter Publication Date..." />
+      <Button class="log-in" text="Add Book" @tap="goToBookListPage" />
       <Button class="create-account" text="Create Account" />
     </StackLayout>
   </Page>
@@ -56,21 +57,27 @@ ActionBar {
   height: 1000;
 }
 
-.username,
-.password {
+.new-book-title,
+.new-book-author,
+.new-book-publication {
   background-color: white;
   border: 2px solid black;
   color: black;
   height: 8%;
   width: 70%;
+  padding-left: 10;
 }
 
-.username {
-  margin: 20% auto 2% auto;
+.new-book-title {
+  margin: 10% auto 2% auto;
 }
 
-.password {
+.new-book-author {
   margin: 0 auto 2% auto;
+}
+
+.new-book-publication {
+  margin: 0 auto 10% auto;
 }
 
 .log-in {
