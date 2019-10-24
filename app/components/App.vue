@@ -10,13 +10,14 @@
         v-model="publication"
       />
       <Button class="log-in" text="Add Book" @tap="goToBookListPage" />
-      <Button class="create-account" text="Create Account" />
+      <Button class="create-account" text="Create Account" @tap="goToCreateAccountPage" />
     </StackLayout>
   </Page>
 </template>
 
 <script >
 import BookListPage from "./BookListPage";
+import CreateAccountPage from "./CreateAccountPage";
 
 export default {
   data() {
@@ -32,6 +33,9 @@ export default {
     this.fetchBooks();
   },
   methods: {
+    goToCreateAccountPage() {
+      this.$navigateTo(CreateAccountPage);
+    },
     goToBookListPage() {
       if (this.title === "" || this.author === "" || this.publication === "") {
         alert("You must enter a title, author, and publication date");
