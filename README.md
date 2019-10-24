@@ -19,6 +19,8 @@ The Front End was built with [NativeScript Vue](https://nativescript-vue.org/en/
 
 * My biggest challenge on the Front End came while using the simulator. For most of the project I was content using NativeScript Playground & Preview apps to see my application live as I was building it. But once I got the Restful API in Laravel built, I wanted to start testing GET, POST, and DELETE requests. As I was making these fetch requests, they weren't returning any data on the mobile simulator even though the requests were working fine in Postman. I realized that the mobile simulator would not work for fetch requests because it can't connect to the local host vis-a-vis my computer. So at that point I transitioned to the desktop simulator and the data started flowing. 
 
+* My biggest challenge on the Back End came in the initial setup of Laravel. Laravel's systems requirements are extensive, and include PHP, mysql, Apache, and some database management application like Sequel Pro. But once I got it up and running I found its file structure and content intuitive. Laravel is now my favorite way to make Restful APIs. 
+
 ## Contributors 
 
 [Saad Baradan](https://github.com/saadricklamar)
