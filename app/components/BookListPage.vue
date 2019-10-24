@@ -21,7 +21,6 @@
 
 <script>
 import BookDetailsPage from "./BookDetailsPage";
-import * as http from "http";
 
 export default {
   data() {
@@ -82,7 +81,7 @@ ListView {
 .book-card {
   background: #fafaf5;
   color: #53ba82;
-  font-size: 24;
+  font-size: 20;
   font-weight: bold;
   height: 90;
   margin: 5;
