@@ -9,7 +9,7 @@
         hint=" Enter Publication Date..."
         v-model="publication"
       />
-      <Button class="log-in" text="Add Book" @tap="goToBookListPage" />
+      <Button class="add-book" text="Add Book" @tap="goToBookListPage" />
       <Button class="create-account" text="Create Account" @tap="goToCreateAccountPage" />
     </StackLayout>
   </Page>
@@ -120,7 +120,7 @@ ActionBar {
   margin: 0 auto 10% auto;
 }
 
-.log-in {
+.add-book {
   background: #53ba82;
   color: white;
   font-size: 20px;
