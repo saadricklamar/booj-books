@@ -12,7 +12,7 @@ The Front End was built with [NativeScript Vue](https://nativescript-vue.org/en/
 
 ## Screen Shots
 
-<img src="app/assets/images/HomePage.jpeg" width="270" height="500"/> <img src="app/assets/images/BookListPage.jpeg.png" width="270" height="500"/> <img src="app/assets/images/BookDetailPage.jpeg.png" width="270" height="500"/>
+<img src="app/assets/images/HomePage.jpeg.png" width="270" height="500"/> <img src="app/assets/images/BookListPage.jpeg.png" width="270" height="500"/> <img src="app/assets/images/BookDetailPage.jpeg.png" width="270" height="500"/>
 
 
 ## Challenges & Take Aways
@@ -27,11 +27,11 @@ The Front End was built with [NativeScript Vue](https://nativescript-vue.org/en/
 
 * In terms of deployment, I wanted to use NativeScript Sidekick. After downloading and attempting to Auto Generate Provisioning and Certificates, I received this error:
 
- "An error has occured while generating the certificate and mobile provision. Reason: Two-step verification not supported at the moment..."
+     "An error has occured while generating the certificate and mobile provision. Reason: Two-step verification not supported at the moment..."
 
-After doing some research, it looks like Auto Generation for Code Signing does not work on Apple devices that have two-factor authentication always enabled, which is the case for newer iphones such as mine. This is from a NativeScript Engineer:
+     After doing some research, it looks like Auto Generation for Code Signing does not work on Apple devices that have two-factor authentication always enabled, which is the case for newer iphones such as mine. This is from a NativeScript Engineer:
 
-"The Code Signing Assistance currently doesn't work with paid Apple IDs due to the two-step verification security feature utilized by Apple. We have this feature on our roadmap but it would require a lot of development effort and we cannot give you a precise time frame for when it might be available." ~ SideKick Manage iOS Provisioning and Certificates Errors
+     "The Code Signing Assistance currently doesn't work with paid Apple IDs due to the two-step verification security feature utilized by Apple. We have this feature on our roadmap but it would require a lot of development effort and we cannot give you a precise time frame for when it might be available." ~ SideKick Manage iOS Provisioning and Certificates Errors
 
 * All in all, this project was a blast. I loved learning Laravel and I plan on utilizing it for any Restful APIs I build in the future. I also want to explore Laravel's Blade templating for front facing projects. I think my experience with React Native and Vue.js helped me understand the fundamentals of NativeScript Vue quickly. 
 
