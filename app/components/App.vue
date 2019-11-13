@@ -2,14 +2,9 @@
   <Page>
     <ActionBar title="Booj's Book List" />
     <StackLayout class="home">
-      <TextField class="new-book-title" hint=" Enter Book Title..." v-model="title" />
-      <TextField class="new-book-author" hint=" Enter Book Author..." v-model="author" />
-      <TextField
-        class="new-book-publication"
-        hint=" Enter Publication Date..."
-        v-model="publication"
-      />
-      <Button class="add-book" text="Add Book" @tap="goToBookListPage" />
+      <TextField class="user" hint=" Enter UserName..." v-model="userName" />
+      <TextField class="password" hint=" Enter Password..." v-model="passWord" />
+      <Button class="log-in" text="Log In" @tap="goToBookListPage" />
       <Button class="create-account" text="Create Account" @tap="goToCreateAccountPage" />
     </StackLayout>
   </Page>
@@ -24,9 +19,8 @@ export default {
     return {
       books: [],
       error: "",
-      title: "",
-      author: "",
-      publication: ""
+      userName: "",
+      passWord: "",
     };
   },
   mounted() {
@@ -37,18 +31,7 @@ export default {
       this.$navigateTo(CreateAccountPage);
     },
     goToBookListPage() {
-      if (this.title === "" || this.author === "" || this.publication === "") {
-        alert("You must enter a title, author, and publication date");
-      } else {
-        let newBook = {
-          title: this.title,
-          author: this.author,
-          publication: this.publication
-        };
-        this.books.push(newBook);
-        this.addBook(newBook);
-        this.navigate();
-      }
+      this.navigate(); 
     },
     navigate() {
       this.$navigateTo(BookListPage, {
@@ -56,9 +39,8 @@ export default {
           books: this.books
         }
       });
-      this.title = "";
-      this.author = "";
-      this.publication = "";
+      this.userName = "";
+      this.passWord = "";
     },
     addBook(newBook) {
       fetch("http://127.0.0.1:8000/api/book", {
@@ -97,9 +79,8 @@ ActionBar {
   height: 1000;
 }
 
-.new-book-title,
-.new-book-author,
-.new-book-publication {
+.user,
+.password {
   background-color: white;
   border: 2px solid black;
   color: black;
@@ -108,19 +89,15 @@ ActionBar {
   padding-left: 10;
 }
 
-.new-book-title {
-  margin: 10% auto 2% auto;
+.user {
+  margin: 25% auto 2% auto;
 }
 
-.new-book-author {
+.password {
   margin: 0 auto 2% auto;
 }
 
-.new-book-publication {
-  margin: 0 auto 10% auto;
-}
-
-.add-book {
+.log-in {
   background: #53ba82;
   color: white;
   font-size: 20px;
