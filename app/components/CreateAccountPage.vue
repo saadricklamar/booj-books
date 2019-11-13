@@ -2,7 +2,10 @@
   <Page class="page">
     <ActionBar title="Create Account" class="action-bar" />
     <StackLayout class="home">
-      <Label class="feature" text="Feature coming soon..." />
+      <TextField class="user" hint=" Enter UserName..." />
+      <TextField class="password" hint=" Enter Password..." />
+      <TextField class="password" hint=" Enter Password Again..." />
+      <Button class="create-account" text="Create Account" />
     </StackLayout>
   </Page>
 </template>
@@ -20,15 +23,16 @@ ActionBar {
   background-color: #53ba82;
   color: #ffffff;
 }
-
-.page {
-  background: #53ba82;
+.user {
+  margin-top: 19%;
 }
 
-.feature {
-  color: black;
+.create-account {
+  background: #53ba82;
+  color: white;
+  font-size: 20px;
   font-weight: bold;
-  text-align: center;
-  margin: 200 auto;
+  height: 8%;
+  width: 70%;
 }
 </style>
