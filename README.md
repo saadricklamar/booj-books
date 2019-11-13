@@ -1,6 +1,6 @@
 # Booj's Book List
 
-Booj's Book List is a take home project that allows users to add, browse, and remove books. Books can be sorted alphabetically by title or author, and each book can be inspected for further details. 
+Booj's Book List is a project I decided to take up in order to learn two new frameworks, NativeScipt and Laravel. Users can create an account, log in, and add, browse, and remove books. Additionally, books can be sorted alphabetically by title or author, and each book can be inspected for further details. 
 
 ## Teck Stack
 
