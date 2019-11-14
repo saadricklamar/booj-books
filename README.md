@@ -10,11 +10,11 @@ Booj's Books utilizes a Restful API that was built in [Laravel](https://laravel.
 
 ## Demo
 
-![2019-10-25 12 49 18](https://user-images.githubusercontent.com/42000931/67596418-e9ceb700-f725-11e9-8566-cf4838078c8b.gif)
+Coming soon...
 
 ## Screen Shots
 
-<img src="app/assets/images/HomePage.jpeg.png" width="270" height="500"/> <img src="app/assets/images/BookListPage.jpeg.png" width="270" height="500"/> <img src="app/assets/images/BookDetailPage.jpeg.png" width="270" height="500"/>
+### Home Page <img src="app/assets/images/HomePage.jpg" width="270" height="500"/> <img src="app/assets/images/CreateAccountPage.jpg" width="270" height="500"/> <img src="app/assets/images/BookListPage.jpeg.png" width="270" height="500"/> 
 
 
 ## Challenges & Take Aways
