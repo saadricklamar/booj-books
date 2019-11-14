@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import BookListPage from "./BookListPage"; 
+
 export default {
   data() {
     return {
@@ -43,6 +45,7 @@ export default {
       this.userName = "";
       this.password = "";
       this.verifyPassword = "";
+      this.$navigateTo(BookListPage)
     }
   }
 };
