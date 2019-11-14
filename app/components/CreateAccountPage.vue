@@ -2,10 +2,22 @@
   <Page class="page">
     <ActionBar title="Create Account" class="action-bar" />
     <StackLayout class="home">
-      <TextField class="user" hint=" Enter UserName..." />
-      <TextField class="password" hint=" Enter Password..." />
-      <TextField class="password" hint=" Enter Password Again..." />
-      <Button class="create-account" text="Create Account" />
+      <TextField class="user" hint=" Enter UserName..." v-model="userName" />
+      <TextField
+        class="password"
+        hint=" Enter Password..."
+        v-model="password"
+      />
+      <TextField
+        class="password"
+        hint=" Enter Password Again..."
+        v-model="verifyPassword"
+      />
+      <Button
+        class="create-account"
+        text="Create Account"
+        @tap="createNewUser"
+      />
     </StackLayout>
   </Page>
 </template>
@@ -13,7 +25,22 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      userName: "",
+      password: "",
+      verifyPassword: ""
+    };
+  },
+  props: ["users"],
+  methods: {
+    createNewUser() {
+      let newUser = {
+        username: this.userName,
+        password: this.password,
+        verifyPassword: this.verifyPassword
+      };
+      this.users.push(newUser);
+    }
   }
 };
 </script>

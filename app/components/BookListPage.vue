@@ -24,7 +24,8 @@ import BookDetailsPage from "./BookDetailsPage";
 
 export default {
   data() {
-    return {};
+    return {
+    };
   },
   props: ["books"],
   methods: {

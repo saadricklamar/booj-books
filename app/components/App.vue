@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       books: [],
+      users: [],
       error: "",
       userName: "",
       passWord: "",
@@ -28,7 +29,11 @@ export default {
   },
   methods: {
     goToCreateAccountPage() {
-      this.$navigateTo(CreateAccountPage);
+      this.$navigateTo(CreateAccountPage, {
+        props: {
+          users: this.users
+        }
+      });
     },
     goToBookListPage() {
       this.navigate(); 
