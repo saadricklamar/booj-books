@@ -77,7 +77,7 @@ ActionBar {
 }
 
 .home {
-  background-image: url("~/assets/images/library.jpeg");
+  background-image: url("~/assets/images/HomePageBackground.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

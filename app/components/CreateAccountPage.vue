@@ -57,7 +57,7 @@ ActionBar {
   color: #ffffff;
 }
 .home {
-  background-image: url("~/assets/images/CreateAccountPage.jpeg");
+  background-image: url("~/assets/images/CreateAccountBackground.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
