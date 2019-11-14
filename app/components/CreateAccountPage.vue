@@ -1,6 +1,6 @@
 <template>
   <Page class="page">
-    <ActionBar title="Create Account" class="action-bar" />
+    <ActionBar title="Sign Up" class="action-bar" />
     <StackLayout class="home">
       <TextField class="user" hint=" Enter UserName..." v-model="userName" />
       <TextField
