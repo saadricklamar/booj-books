@@ -14,7 +14,7 @@ Coming soon...
 
 ## Screen Shots
 
-### Home Page <img src="app/assets/images/HomePage.jpg" width="270" height="500"/> <img src="app/assets/images/CreateAccountPage.jpg" width="270" height="500"/> <img src="app/assets/images/BookListPage.jpeg.png" width="270" height="500"/> 
+<img src="app/assets/images/HomePage.jpg" width="280" height="500"/> <img src="app/assets/images/CreateAccountPage.jpg" width="280" height="500"/> 
 
 
 ## Challenges & Take Aways
