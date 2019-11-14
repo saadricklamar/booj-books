@@ -83,6 +83,7 @@ ActionBar {
 .password {
   background-color: white;
   border: 2px solid black;
+  border-radius: 20px;
   color: black;
   height: 8%;
   width: 70%;
@@ -104,6 +105,7 @@ ActionBar {
   font-weight: bold;
   height: 8%;
   width: 70%;
+  border-radius: 20px;
 }
 
 .create-account {

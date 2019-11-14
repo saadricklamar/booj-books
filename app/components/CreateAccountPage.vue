@@ -23,16 +23,25 @@ ActionBar {
   background-color: #53ba82;
   color: #ffffff;
 }
+.home {
+  background-image: url("~/assets/images/CreateAccountPage.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 1000;
+}
 .user {
-  margin-top: 19%;
+  margin-top: 25%;
 }
 
 .create-account {
   background: #53ba82;
+  border-radius: 20px;
   color: white;
   font-size: 20px;
   font-weight: bold;
   height: 8%;
   width: 70%;
+  margin-top: 2%;
 }
 </style>
