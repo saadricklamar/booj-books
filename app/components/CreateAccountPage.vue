@@ -40,6 +40,9 @@ export default {
         verifyPassword: this.verifyPassword
       };
       this.users.push(newUser);
+      this.userName = "";
+      this.password = "";
+      this.verifyPassword = "";
     }
   }
 };
