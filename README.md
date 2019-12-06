@@ -6,7 +6,11 @@ Booj's Book List is a project I decided to take up in order to learn two new fra
 
 The Front End was built with [NativeScript Vue](https://nativescript-vue.org/en/docs/introduction/). [Mocha/Chai](https://mochajs.org/) were used for unit testing. And the NativeScript [PlayGround](https://apps.apple.com/us/app/nativescript-playground/id1263543946?ls=1) and [Preview](https://apps.apple.com/us/app/nativescript-preview/id1264484702) Apps were used as a simulator to build this project. 
 
-Booj's Books utilizes a Restful API that was built in [Laravel](https://laravel.com/). The Back End repo can be found [here](https://github.com/saadricklamar/boojbooklist).
+Booj's Books utilizes two RESTful APIs: 
+
+One is built in [Laravel](https://laravel.com/) and stores book information. That repo can be found [here](https://github.com/saadricklamar/boojbooklist).
+
+The second RESTful API is built in [Node.js](https://nodejs.org/en/) and stores mock user information. That repo can be found [here](https://github.com/saadricklamar/booj-users).
 
 ## Demo
 
