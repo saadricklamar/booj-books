@@ -3,14 +3,22 @@
     <ActionBar title="Booj's Book List" />
     <StackLayout class="home">
       <TextField class="user" hint=" Enter UserName..." v-model="userName" />
-      <TextField class="password" hint=" Enter Password..." v-model="passWord" />
+      <TextField
+        class="password"
+        hint=" Enter Password..."
+        v-model="passWord"
+      />
       <Button class="log-in" text="Log In" @tap="goToBookListPage" />
-      <Button class="create-account" text="Create Account" @tap="goToCreateAccountPage" />
+      <Button
+        class="create-account"
+        text="Create Account"
+        @tap="goToCreateAccountPage"
+      />
     </StackLayout>
   </Page>
 </template>
 
-<script >
+<script>
 import BookListPage from "./BookListPage";
 import CreateAccountPage from "./CreateAccountPage";
 
@@ -21,7 +29,7 @@ export default {
       users: [],
       error: "",
       userName: "",
-      passWord: "",
+      passWord: ""
     };
   },
   mounted() {
@@ -36,7 +44,7 @@ export default {
       });
     },
     goToBookListPage() {
-      this.navigate(); 
+      this.navigate();
     },
     navigate() {
       this.$navigateTo(BookListPage, {
@@ -70,10 +78,14 @@ export default {
 };
 </script>
 
-<style >
+<style>
 ActionBar {
   background-color: #53ba82;
   color: #ffffff;
+}
+
+.font-awesome {
+  font-family: "FontAwesome";
 }
 
 .home {
