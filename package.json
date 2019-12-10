@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "chai-spies": "^1.0.0",
+    "font-awesome": "^4.7.0",
+    "nativescript-fonticon": "^2.0.0",
     "nativescript-theme-core": "^1.0.6",
     "nativescript-unit-test-runner": "^0.7.0",
     "nativescript-vue": "^2.4.0",
